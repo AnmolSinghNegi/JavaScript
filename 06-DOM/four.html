@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body style="background-color: grey;color: white;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const li = document.createElement('li');
+        li.innerHTML=`${langName}`;
+        document.querySelector('.language').append(li);
+    }
+    addLanguage("Python");
+    addLanguage("TypeScript");
+    //optimse ways
+    function addOptilang(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName));
+        document.querySelector('.language').append(li);
+    }//for bigger projects
+    addOptilang('GoLang');
+
+    //Edit values
+    const secondLang = document.querySelector("li:nth-child(2)")
+    const newli= document.createElement('li');
+    newli.textContent="CPP";
+    secondLang.replaceWith(newli)
+
+    //example2
+    const firstLang=document.querySelector("li:first-child");
+    firstLang.outerHTML='<li>Java</li>'
+    //remove
+    const lastlang=document.querySelector('li:last-child');
+    lastlang.remove();
+    
+</script>
+</html>
